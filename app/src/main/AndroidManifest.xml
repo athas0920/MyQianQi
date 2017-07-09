@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.qianqi">
+    <!--计歩-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-feature android:name="android.hardware.sensor.accelerometer" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-feature
+        android:name="android.hardware.sensor.stepcounter"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.sensor.stepdetector"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCES_MOCK_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_GPS" />
+    <!-- SDK1.5需要android.permission.GET_TASKS权限判断本程序是否为当前运行的应用? -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!-- 来电消音 -->
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 摄影机 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <application
+        android:name="com.orm.SugarApp"
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        tools:replace="Android:icon, android:theme">
+
+        <meta-data
+            android:name="DATABASE"
+            android:value="calendar.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="DOMAIN_PACKAGE_NAME"
+            android:value="com.qianqi.model" />
+
+        <activity android:name="com.qianqi.activity.Welcome">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.qianqi.activity.FrameActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name="com.qianqi.activity.Webpage"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.HeadlineNewsWebPager"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.FunWebpager"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.EconomicWebpager"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.AirPlaneQueryActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.QueryPlaneResultActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.TrainQueryActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.TrainQueryResultActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.TrainQueryResultByNameActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.RegexActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.PassWordActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.RegistSuccessActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.RegistFail"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.BroadcastChargeWebview"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.MobileChargeWebpager"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ElectricChargeWebview"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ExpressQueryActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ExpressQueryResultActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.AirplaneQueryNameResultActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.VehicleViolationResultActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.VehicleViolationQueryActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.TourismWebview"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.SheBao"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.ZhengwufuwuActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+        <activity
+            android:name=".activity.NoVehicleViolationActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+
+        <activity
+            android:name=".activity.SearchActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+
+        <activity
+            android:name=".activity.TrainWebActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+
+        <activity
+            android:name=".activity.AirPlaneWebActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+
+        <activity
+            android:name=".activity.StepActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="true" />
+
+        <receiver
+            android:name="com.qianqi.activity.AlarmReceiver"
+            android:enabled="true"
+            android:exported="true"/>
+        <activity
+            android:name="com.qianqi.activity.CalendarActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.qianqi.activity.AddScheduleActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:label="@string/title_activity_add_schedule"
+            android:screenOrientation="portrait"/>
+
+        <activity
+            android:name="com.qianqi.activity.RepeatActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"/>
+
+    </application>
+
+</manifest>
